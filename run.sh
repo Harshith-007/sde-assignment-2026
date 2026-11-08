@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-# Replace this with your controller. Contract: ./run.sh <SIM_URL> runs until the scenario finishes.
 set -euo pipefail
-SIM_URL="${1:?usage: ./run.sh <SIM_URL>}"
-echo "No controller yet — running the naive example against $SIM_URL" >&2
-exec python examples/naive_controller.py --url "$SIM_URL"
+SIM_URL="${1:-${SIM_URL:-http://127.0.0.1:8700}}"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$ROOT"
+export PYTHONUNBUFFERED=1
+export CONTROLLER_DB="${CONTROLLER_DB:-$ROOT/controller.sqlite3}"
+exec python controller.py --url "$SIM_URL" --db "$CONTROLLER_DB"
