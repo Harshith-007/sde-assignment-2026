@@ -171,8 +171,7 @@ thing you cut.
 
 ## 10. Rules
 
-- **AI tools are allowed, and we expect you to use them.** You must be able to defend every line and every
-  decision without them in the review. Generic, unadapted output is easy to spot and scores poorly.
+ Generic, unadapted output is easy to spot and scores poorly.
 - If something is ambiguous, **state your assumption in `SUBMISSION.md` and proceed**. Don't wait for an
   answer. Questions are welcome but won't block you.
 - Don't share the assignment or your solution publicly.
